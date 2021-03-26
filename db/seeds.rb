@@ -9,5 +9,5 @@
 NOUNS = ["Astronauts", "Players", "Gamers", "Ballers", "Professionals", "Workers", "Weavers", "Artists", "Animals"]
 ADJECTIVES = ["Huge", "Amazing", "Exceptional", "Lazy", "Wondrous", "Mysterious", "Magical", "Serious", "Somber"]
 
-10.times { |i| Room.create!(name: "#{ADJECTIVES.sample} #{NOUNS.sample} - #{i}") }
+1.upto(10) { |i| Room.create!(name: "#{ADJECTIVES.sample} #{NOUNS.sample} - #{i}") }
 

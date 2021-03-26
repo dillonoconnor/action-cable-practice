@@ -1,3 +1,5 @@
-<%= content_tag :h1, @room.name, id: "room-id", data: {room_id: @room.id} %>
+<section class="section">
+  <%= content_tag :h1, @room.name, id: "room-id", class: "title", data: {room_id: @room.id} %>
+  <%= link_to "Leave Channel", root_path, class: "button is-danger" %>
+</section>
 
-<%= button_to "Leave Channel", root_path, method: :get %>
