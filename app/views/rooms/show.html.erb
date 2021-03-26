@@ -1,2 +1,3 @@
-<h1>Rooms#show</h1>
-<p>Find me in app/views/rooms/show.html.erb</p>
+<%= content_tag :h1, @room.name, id: "room-id", data: {room_id: @room.id} %>
+
+<%= button_to "Leave Channel", root_path, method: :get %>

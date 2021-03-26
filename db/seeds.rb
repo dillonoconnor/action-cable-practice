@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+NOUNS = ["Astronauts", "Players", "Gamers", "Ballers", "Professionals", "Workers", "Weavers", "Artists", "Animals"]
+ADJECTIVES = ["Huge", "Amazing", "Exceptional", "Lazy", "Wondrous", "Mysterious", "Magical", "Serious", "Somber"]
+
+10.times { |i| Room.create!(name: "#{ADJECTIVES.sample} #{NOUNS.sample} - #{i}") }
+
