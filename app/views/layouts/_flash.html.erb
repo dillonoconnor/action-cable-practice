@@ -1,0 +1,9 @@
+<% if flash.any? %>
+  <% flash.each do |type, msg| %>
+    <% if type == "notice" %>
+      <%= content_tag :p, msg, class: "notification is-success" %>
+    <% else %>
+      <%= content_tag :p, msg, class: "notification is-warning" %>
+    <% end %>
+  <% end %>
+<% end %>
