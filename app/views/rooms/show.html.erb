@@ -1,5 +1,13 @@
-<section class="section">
-  <%= content_tag :h1, @room.name, id: "room-id", class: "title", data: {room_id: @room.id} %>
-  <%= link_to "Leave Channel", root_path, class: "button is-danger" %>
+<section class="section has-background-white">
+  <div class="">
+    <%= content_tag :h1, @room.name, id: "room-id", class: "title", data: {room_id: @room.id} %>
+    <article id="chat-box" class="is-flex is-flex-direction-column">
+      <div class="box is-flex-grow-1">
+      
+      </div>
+      <%= render "form", locals: {message: @message} %>
+    </article>
+    <%= link_to "Leave Channel", root_path, class: "button is-danger" %>
+  </div>
 </section>
 

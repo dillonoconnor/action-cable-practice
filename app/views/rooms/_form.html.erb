@@ -1,0 +1,9 @@
+<%= form_with url: new_message_path do |f| %>
+  <div class="control">
+      <%= f.text_field :message, class: "input mb-2" %>
+  </div>
+
+  <div class="control is-flex is-justify-content-flex-end">
+    <%= f.submit "Send", class: "button is-flex " %>
+  </div> 
+<% end %>
