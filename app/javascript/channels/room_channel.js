@@ -14,7 +14,9 @@ document.addEventListener("turbolinks:load", () => {
       },
     
       received(data) {
-        
+        console.log(data);
+        const chatBox = document.getElementById("chat-box");
+        chatBox.insertAdjacentHTML("beforeend", `<div class="notification is-info">${data.content}</div>`);
       }
     });
   }

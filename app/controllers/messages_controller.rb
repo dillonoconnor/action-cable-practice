@@ -1,10 +1,16 @@
 class MessagesController < ApplicationController
+
+  before_action :authenticate_user!
+
   def index
     @messages = Message.all
   end
 
   def create
-    @message = Message.new(message_params)
+    @message = current_user.messages.new(message_params) 
+    if @message.save
+      NewCommentJob.perform_later(@message)
+    end
   end
 
   def edit
@@ -20,6 +26,6 @@ class MessagesController < ApplicationController
   private
 
     def message_params
-      params.require(:message).permit(:content)
+      params.require(:message).permit(:content, :room_id)
     end
 end
