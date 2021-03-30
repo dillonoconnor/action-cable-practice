@@ -7,9 +7,9 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = current_user.messages.new(message_params) 
+    @message = current_user.messages.new(message_params)
     if @message.save
-      NewCommentJob.perform_later(@message)
+      NewCommentJob.perform_later(message: @message, current_user: current_user)
     end
   end
 

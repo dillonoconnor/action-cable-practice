@@ -1,4 +1,4 @@
-<%= form_with model: @message do |f| %>
+<%= form_with model: @message, id: "chat-form", local: false do |f| %>
   <div class="control">
       <%= f.text_field :content, class: "input mb-2" %>
   </div>
