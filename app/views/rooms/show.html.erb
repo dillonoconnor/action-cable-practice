@@ -1,5 +1,5 @@
 <section class="section has-background-white mt-6">
-  <%= content_tag :h1, @room.name, id: "room-id", class: "title", data: {room_id: @room.id} %>
+  <%= content_tag :h1, @room.name, id: "room-id", class: "title", data: {room_id: @room.id, user_id: current_user.id} %>
   <article class="is-flex is-flex-direction-column">
     <div id="chat-box" class="box is-flex-grow-1"></div>
     <%= render partial: "form", locals: {room_id: @room.id} %>
